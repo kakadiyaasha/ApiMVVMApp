@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RoomApiMVVMApp</string>
+    <string name="title_activity_my_product">MyProductActivity</string>
+</resources>
