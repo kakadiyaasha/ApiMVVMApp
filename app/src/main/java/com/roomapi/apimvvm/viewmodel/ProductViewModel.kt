@@ -19,7 +19,7 @@ class ProductViewModel @Inject constructor(private  val repository: ProductRepos
 
     private val _products= MutableLiveData<NetworkState<List<Product>>>()
 
-    val products: LiveData<NetworkState<List<Product>>>
+   val products: LiveData<NetworkState<List<Product>>>
 
         get()=_products
 
