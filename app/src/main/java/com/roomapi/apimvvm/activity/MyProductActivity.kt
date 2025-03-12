@@ -48,6 +48,8 @@ class MyProductActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
+
+
         setContent {
             RoomApiMVVMAppTheme{
 
@@ -69,7 +71,7 @@ fun ProductScreen(viewModel: ProductViewModel) {
 
     Scaffold(
         topBar = {
-            TopAppBar(title = { Text(text = "My ProductList") },Modifier.background(Color.Blue))
+            TopAppBar(title = { Text(text = "My ProductList") },Modifier.background(Color.Gray))
         }
     ) { paddingValues ->
         // The rest of your content goes here
