@@ -1,7 +1,6 @@
 package com.roomapi.apimvvm.viewmodel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.roomapi.apimvvm.getOrAwaitValue
 import com.roomapi.apimvvm.modul.Product
 import com.roomapi.apimvvm.network.NetworkState
 import com.roomapi.apimvvm.repository.ProductRepository
