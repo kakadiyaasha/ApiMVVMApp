@@ -11,7 +11,6 @@ import kotlinx.coroutines.test.StandardTestDispatcher
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runTest
 import kotlinx.coroutines.test.setMain
-import okhttp3.internal.wait
 
 import org.junit.After
 import org.junit.Assert.assertEquals
@@ -65,11 +64,10 @@ class ProductViewModelTest {
         testDispatcher.scheduler.advanceUntilIdle()
 
 
-      val result = viewModel.products.getOrAwaitValue()
+      val result = viewModel.products.value
 //        assertEquals(2, result.size) // Check if the LiveData size is correct
 
-        assert(viewModel.products.value is NetworkState.Success)
-        assertEquals(2, (result as NetworkState.Success).data.size)
+        assertEquals(2,result.size)
     }
     @Test
     fun getProduct_Error()= runTest{
@@ -86,8 +84,8 @@ class ProductViewModelTest {
         // Advance the coroutine to ensure it finishes
         testDispatcher.scheduler.advanceUntilIdle()
 
-        val result = viewModel.products.getOrAwaitValue()
-        assertEquals(true,result is NetworkState.Error)
+        val result = viewModel.products.value
+        assertEquals(true,result)
         //assertEquals("Something went to wrong", result) // Check if the LiveData size is correct
 
 
